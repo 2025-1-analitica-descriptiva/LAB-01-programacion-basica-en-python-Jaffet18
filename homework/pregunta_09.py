@@ -52,6 +52,6 @@ def pregunta_09():
                 # Manejar el caso donde la columna no existe
                 continue
     # Devolver el diccionario con los conteos
-    resultado = sorted(conteo_letras.items())
+    resultado = dict(sorted(conteo_letras.items()))
     return resultado
 print(pregunta_09())

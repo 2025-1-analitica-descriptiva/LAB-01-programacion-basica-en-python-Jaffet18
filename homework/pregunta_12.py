@@ -20,26 +20,21 @@ def pregunta_12():
     {'A': 177, 'B': 187, 'C': 114, 'D': 136, 'E': 324}
 
     """
-    # Se crea el diccionario vacío para almacenar las sumas
     dic_suma = {}
-    #ruta_archivo = r'D:\GitHub\LABORATORIOS\LAB-01-programacion-basica-en-python-Jaffet18\files\input\data.csv'
-
+    
     with open('files/input/data.csv', 'r') as archivo:
-        lineas = archivo.readlines()
-        for linea in lineas:
+        for linea in archivo:
             elementos = linea.strip().split('\t')
             clave = elementos[0]
-            valores_col5 = elementos[4]
-
-            # Extraer solo los dígitos y sumarlos con un comprenhension
-            suma = sum(int(c) for c in valores_col5 if c.isdigit())
-
-            # Se ctualiza el diccionario con las sumas
-            if clave in dic_suma:
-                dic_suma[clave] += suma
-            else:
-                dic_suma[clave] = suma
-
+            pares_col5 = elementos[4].split(',')  # Separa por comas
+            suma = 0
+            # print(pares_col5)
+            for par in pares_col5:
+                _, valor = par.split(':')  # Extrae el valor después de ':'
+                suma += int(valor)
+                #print(clave, suma)
+            dic_suma[clave] = dic_suma.get(clave, 0) + suma
+    # Ordenar el diccionario por clave
     return dict(sorted(dic_suma.items()))
 
 print(pregunta_12())
