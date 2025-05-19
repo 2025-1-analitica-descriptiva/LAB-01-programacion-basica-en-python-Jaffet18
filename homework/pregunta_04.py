@@ -26,3 +26,30 @@ def pregunta_04():
      ('12', 3)]
 
     """
+    # Inicializar un diccionario para contar la cantidad de registros por letra
+    conteo_letras = {}
+
+    # Especificar la ruta completa del archivo
+    ruta_archivo = r'D:\GitHub\LABORATORIOS\LAB-01-programacion-basica-en-python-Jaffet18\files\input\data.csv'
+
+    # Abrir el archivo y leer línea por línea
+    with open(ruta_archivo, 'r') as archivo:
+        for linea in archivo:
+            # Dividir la línea por tabulaciones y obtener la primera columna (índice 0)
+            columnas = linea.split('\t')
+            try:
+                fecha = columnas[2]
+                # Obtener el mes de la fecha
+                mes = fecha.split('-')[1]
+                # Contar la letra en el diccionario
+                if mes in conteo_letras:
+                    conteo_letras[mes] += 1
+                else:
+                    conteo_letras[mes] = 1
+            except IndexError:
+                # Manejar el caso donde la columna no existe
+                continue
+    # Convertir el diccionario a una lista de tuplas y ordenarla alfabéticamente
+    resultado = sorted(conteo_letras.items())
+    return resultado
+print(pregunta_04())
