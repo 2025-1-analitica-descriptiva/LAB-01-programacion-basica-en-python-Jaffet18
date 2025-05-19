@@ -22,9 +22,9 @@ def pregunta_12():
     """
     # Se crea el diccionario vacío para almacenar las sumas
     dic_suma = {}
-    ruta_archivo = r'D:\GitHub\LABORATORIOS\LAB-01-programacion-basica-en-python-Jaffet18\files\input\data.csv'
+    #ruta_archivo = r'D:\GitHub\LABORATORIOS\LAB-01-programacion-basica-en-python-Jaffet18\files\input\data.csv'
 
-    with open(ruta_archivo, 'r') as archivo:
+    with open('files/input/data.csv', 'r') as archivo:
         lineas = archivo.readlines()
         for linea in lineas:
             elementos = linea.strip().split('\t')

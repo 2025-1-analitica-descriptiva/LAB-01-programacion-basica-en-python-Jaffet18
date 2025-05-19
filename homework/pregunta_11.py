@@ -20,10 +20,10 @@ def pregunta_11():
     suma_columna_2 = {}
 
     # Especificar la ruta completa del archivo
-    ruta_archivo = r'D:\GitHub\LABORATORIOS\LAB-01-programacion-basica-en-python-Jaffet18\files\input\data.csv'
+    #ruta_archivo = r'D:\GitHub\LABORATORIOS\LAB-01-programacion-basica-en-python-Jaffet18\files\input\data.csv'
 
     # Abrir el archivo y leer línea por línea
-    with open(ruta_archivo, 'r') as archivo:
+    with open('files/input/data.csv', 'r') as archivo:
         for linea in archivo:
             # Dividir la línea por tabulaciones y obtener las columnas necesarias
             columnas = linea.split('\t')

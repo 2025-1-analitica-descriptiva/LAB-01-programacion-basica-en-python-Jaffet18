@@ -19,10 +19,10 @@ def pregunta_03():
     conteo_letras = {}
 
     # Especificar la ruta completa del archivo
-    ruta_archivo = r'D:\GitHub\LABORATORIOS\LAB-01-programacion-basica-en-python-Jaffet18\files\input\data.csv'
+    #ruta_archivo = r'D:\GitHub\LABORATORIOS\LAB-01-programacion-basica-en-python-Jaffet18\files\input\data.csv'
 
     # Abrir el archivo y leer línea por línea
-    with open(ruta_archivo, 'r') as archivo:
+    with open('files/input/data.csv', 'r') as archivo:
         for linea in archivo:
             # Dividir la línea por tabulaciones y obtener la primera columna (índice 0)
             columnas = linea.split('\t')
